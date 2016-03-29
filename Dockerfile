@@ -2,6 +2,12 @@ FROM java:8-jdk
 
 RUN apt-get update && apt-get install -y wget git curl zip && rm -rf /var/lib/apt/lists/*
 
+# Install gcc, package
+RUN apt-get update &&\
+    apt-get install -y autoconf bison build-essential libssl-dev \
+    libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev \
+    libgdbm3 libgdbm-dev libmysqld-dev && rm -rf /var/lib/apt/lists/*
+
 ENV JENKINS_HOME /home/jenkins
 ENV JENKINS_SLAVE_AGENT_PORT 50000
 
