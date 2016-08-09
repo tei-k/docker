@@ -8,7 +8,7 @@ RUN apt-get update &&\
     libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev \
     libgdbm3 libgdbm-dev libmysqld-dev && rm -rf /var/lib/apt/lists/*
 
-ENV JENKINS_HOME /home/jenkins
+ENV JENKINS_HOME /var/lib/jenkins
 ENV JENKINS_SLAVE_AGENT_PORT 50000
 
 ARG user=jenkins
@@ -24,7 +24,7 @@ RUN groupadd -g ${gid} ${group} \
 
 # Jenkins home directory is a volume, so configuration and build history 
 # can be persisted and survive image upgrades
-VOLUME /home/jenkins
+VOLUME /var/lib/jenkins
 
 # `/usr/share/jenkins/ref/` contains all reference configuration we want 
 # to set on a fresh new installation. Use it to bundle additional plugins 
