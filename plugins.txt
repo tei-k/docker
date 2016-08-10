@@ -45,3 +45,8 @@ subversion:2.5.7
 scm-api:1.1
 mapdb-api:1.0.6.0
 slack:2.0.1
+ec2:1.35
+bouncycastle-api:1.648.3
+aws-credentials:1.11
+aws-java-sdk:1.10.50
+node-iterator-api:1.5
